@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌿 Pharmacology - Aesthetic Notes for MBBS Finals</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.8;
+            color: #2c3e50;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        
+        .cover {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 40px;
+            text-align: center;
+        }
+        
+        .cover h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .cover .subtitle {
+            font-size: 1.3em;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+        
+        .cover .tags {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        
+        .tag {
+            background: rgba(255,255,255,0.2);
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 0.9em;
+            backdrop-filter: blur(10px);
+        }
+        
+        .content {
+            padding: 60px 50px;
+        }
+        
+        .chapter {
+            margin-bottom: 60px;
+            page-break-inside: avoid;
+        }
+        
+        .chapter-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5em;
+            color: #667eea;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 4px solid #667eea;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+        }
+        
+        .section-title {
+            font-size: 1.8em;
+            color: #764ba2;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .subsection-title {
+            font-size: 1.3em;
+            color: #e74c3c;
+            margin: 20px 0 15px 0;
+            font-weight: 600;
+        }
+        
+        .box {
+            padding: 25px;
+            border-radius: 15px;
+            margin: 20px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .advantage-box {
+            background: linear-gradient(135deg, #d4fc79 0%, #96e6a1 100%);
+            border-left: 5px solid #27ae60;
+        }
+        
+        .disadvantage-box {
+            background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+            border-left: 5px solid #e17055;
+        }
+        
+        .definition-box {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            border-left: 5px solid #00b894;
+        }
+        
+        .example-box {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            border-left: 5px solid #ff7675;
+        }
+        
+        .clinical-box {
+            background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
+            border-left: 5px solid #6c5ce7;
+        }
+        
+        .info-box {
+            background: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%);
+            border-left: 5px solid #a29bfe;
+        }
+        
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        ul li {
+            padding: 8px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+        
+        ul li:before {
+            content: "▸";
+            position: absolute;
+            left: 10px;
+            color: #667eea;
+            font-weight: bold;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        td {
+            padding: 15px;
+            border-bottom: 1px solid #ecf0f1;
+        }
+        
+        tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+        
+        .formula {
+            background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            font-size: 1.3em;
+            font-weight: 600;
+            margin: 20px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .mnemonic {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            padding: 20px;
+            border-radius: 15px;
+            font-style: italic;
+            margin: 15px 0;
+            border-left: 5px solid #00b894;
+        }
+        
+        .arrow {
+            color: #667eea;
+            font-weight: bold;
+        }
+        
+        strong {
+            color: #2d3436;
+            font-weight: 600;
+        }
+        
+        .footer {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+            font-size: 1.2em;
+        }
+        
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .container {
+                box-shadow: none;
+            }
+            .chapter {
+                page-break-after: always;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Cover Page -->
+        <div class="cover">
+            <h1>🌿 PHARMACOLOGY</h1>
+            <div class="subtitle">Aesthetic Notes for MBBS Finals</div>
+            <div class="tags">
+                <span class="tag">📚 Finals Ready</span>
+                <span class="tag">🎯 Viva Prep</span>
+                <span class="tag">⚡ Quick Revision</span>
+                <span class="tag">✨ High-Yield</span>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="content">
+            
+            <!-- Chapter 1: Routes of Drug Administration -->
+            <div class="chapter">
+                <h2 class="chapter-title">💉 Routes of Drug Administration</h2>
+                
+                <div class="section">
+                    <h3 class="section-title">🩸 Intravenous (IV) Route</h3>
+                    
+                    <div class="box advantage-box">
+                        <h4 class="subsection-title">✅ Advantages</h4>
+                        <ul>
+                            <li>⚡ <strong>Fastest onset of action</strong></li>
+                            <li>🎯 <strong>100% bioavailability</strong></li>
+                            <li>🧮 <strong>Precise dose control</strong></li>
+                            <li>🚑 <strong>Useful in emergencies</strong></li>
+                            <li>🔥 <strong>Suitable for irritant drugs</strong></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="box disadvantage-box">
+                        <h4 class="subsection-title">❌ Disadvantages</h4>
+                        <ul>
+                            <li>🦠 <strong>Risk of infection</strong></li>
+                            <li>🩸 <strong>Thrombophlebitis</strong></li>
+                            <li>⛔ <strong>Irreversible once administered</strong></li>
+                            <li>👩‍⚕️ <strong>Needs skilled personnel</strong></li>
+                            <li>⚠️ <strong>Risk of overdose</strong></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h3 class="section-title">🚀 New Drug Delivery Systems</h3>
+                    <div class="box example-box">
+                        <ul>
+                            <li>👁 <strong>Ocusert</strong> – Ocular controlled delivery</li>
+                            <li>♀️ <strong>Progestasert</strong> – Intrauterine progesterone</li>
+                            <li>🫧 <strong>Liposomes</strong> – Targeted delivery</li>
+                            <li>🧬 <strong>Monoclonal antibodies</strong> – Highly specific</li>
+                            <li>🫀 <strong>Drug-eluting stents</strong> – Prevent restenosis</li>
+                            <li>🤖 <strong>Computerized miniature pumps</strong> – Precise infusion</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h3 class="section-title">🌬️ Inhalational & 👅 Sublingual Routes</h3>
+                    <div class="box advantage-box">
+                        <h4 class="subsection-title">Advantages</h4>
+                        <ul>
+                            <li>⚡ <strong>Rapid effect</strong></li>
+                            <li>💊 <strong>Low dose required</strong></li>
+                            <li>☣️ <strong>Reduced systemic toxicity</strong></li>
+                            <li>🚫 <strong>Low first-pass metabolism</strong></li>
+                            <li>📈 <strong>High bioavailability</strong></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h3 class="section-title">🩹 Transdermal Drug Delivery System (TDDS)</h3>
+                    
+                    <div class="box definition-box">
+                        <strong>Definition:</strong> Drug delivery through intact skin using transdermal patches for systemic effect.
+                    </div>
+                    
+                    <table>
+                        <tr>
+                            <th>✅ Uses</th>
+                            <th>❌ Disadvantages</th>
+                        </tr>
+                        <tr>
+                            <td>Prolonged action</td>
+                            <td>Skin irritation</td>
+                        </tr>
+                        <tr>
+                            <td>Avoids first-pass metabolism</td>
+                            <td>Slow onset</td>
+                        </tr>
+                        <tr>
+                            <td>Better compliance</td>
+                            <td>Only potent drugs</td>
+                        </tr>
+                        <tr>
+                            <td>Stable plasma levels</td>
+                            <td>Expensive</td>
+                        </tr>
+                    </table>
+                    
+                    <div class="box example-box">
+                        <h4 class="subsection-title">Examples</h4>
+                        <ul>
+                            <li><strong>Scopolamine</strong> <span class="arrow">→</span> Motion sickness</li>
+                            <li><strong>Clonidine</strong> <span class="arrow">→</span> Hypertension</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h3 class="section-title">🧬 Orphan Drugs</h3>
+                    <div class="box info-box">
+                        <ul>
+                            <li><strong>Ivacaftor</strong> <span class="arrow">→</span> Cystic fibrosis</li>
+                            <li><strong>Alglucerase</strong> <span class="arrow">→</span> Gaucher's disease</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chapter 2: Pharmacokinetics -->
+            <div class="chapter">
+                <h2 class="chapter-title">📘 Pharmacokinetics</h2>
+                
+                <div class="section">
+                    <h3 class="section-title">🔄 Fundamental Concepts</h3>
+                    
+                    <div class="box definition-box">
+                        <ul>
+                            <li><strong>Pharmacokinetics</strong> <span class="arrow">→</span> What the body does to the drug</li>
+                            <li><strong>Pharmacodynamics</strong> <span class="arrow">→</span> What the drug does to the body</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="mnemonic">
+                        🧠 <strong>Mnemonic:</strong> "Drug does Dynamics"
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h3 class="section-title">📉 Bioavailability</h3>
+                    
+                    <div class="box definition-box">
+                        <strong>Definition:</strong> Fraction of administered drug reaching systemic circulation unchanged.
+                    </div>
+                    
+                    <div class="box info-box">
+                        <ul>
+                            <li>💉 <strong>IV route</strong> <span class="arrow">→</span> 100%</li>
+                            <li><strong>IM</strong> > <strong>Oral</strong> (least)</li>
+                            <li>🔁 High first-pass metabolism <span class="arrow">→</span> Low bioavailability</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h3 class="section-title">🔁 First Pass Metabolism</h3>
+                    
+                    <div class="box definition-box">
+                        <strong>Definition:</strong> Metabolism of drug before entering systemic circulation.
+                    </div>
+                    
+                    <div class="box info-box">
+                        <h4 class="subsection-title">Key Points</h4>
+                        <ul>
+                            <li><strong>Highest</strong> <span class="arrow">→</span> Oral route</li>
+                            <li><strong>Lowest</strong> <span class="arrow">→</span> IV route</li>
+                        </ul>
+                    </div>
+                    
+                    <table>
+                        <tr>
+                            <th>Effect</th>
+                            <th>Drugs</th>
+                        </tr>
+                        <tr>
+                            <td>Ineffective orally</td>
+                            <td>Isoprenaline, Lidocaine</td>
+                        </tr>
+                        <tr>
+                            <td>Higher dose needed</td>
+                            <td>Propranolol, Salbutamol, GTN</td>
+                        </tr>
+                        <tr>
+                            <td>Toxic at low dose</td>
+                            <td>Theophylline</td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <div class="section">
+                    <h3 class="section-title">🧪 Apparent Volume of Distribution (Vd)</h3>
+                    
+                    <div class="box definition-box">
+                        <strong>Definition:</strong> Hypothetical volume assuming uniform distribution of drug.
+                    </div>
+                    
+                    <div class="box example-box">
+                        <h4 class="subsection-title">Examples</h4>
+                        <ul>
+                            <li><strong>High Vd</strong> <span class="arrow">→</span> Digoxin, Propranolol</li>
+                            <li><strong>Low Vd (ECF only)</strong> <span class="arrow">→</span> Gentamicin, Streptomycin</li>
+                            <li><strong>High protein binding</strong> <span class="arrow">→</span> High Vd <span class="arrow">→</span> Aprepitant</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h3 class="section-title">⏳ Plasma Half-Life (t½)</h3>
+                    
+                    <div class="box definition-box">
+                        <strong>Definition:</strong> Time for plasma concentration to reduce by 50%.
+                    </div>
+                    
+                    <div class="box info-box">
+                        <h4 class="subsection-title">Types</h4>
+                        <ul>
+                            <li>Distribution half-life</li>
+                            <li>Elimination half-life (true t½)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="box clinical-box">
+                        <h4 class="subsection-title">Clinical Significance</h4>
+                        <ul>
+                            <li>Determines dosing interval</li>
+                            <li>Steady state in 4–5 t½</li>
+                            <li><strong>First order:</strong> t½ constant</li>
+                            <li><strong>Zero order:</strong> t½ ↑ with dose</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h3 class="section-title">🔥 Microsomal Enzyme Induction</h3>
+                    
+                    <div class="box definition-box">
+                        <strong>Definition:</strong> Increased enzyme synthesis <span class="arrow">→</span> Increased drug metabolism
+                    </div>
+                    
+                    <div class="box info-box">
+                        <h4 class="subsection-title">Types</h4>
+                        <ul>
+                            <li><strong>Selective</strong> <span class="arrow">→</span> DDT</li>
+                            <li><strong>Non-selective</strong> <span class="arrow">→</span> Phenobarbitone</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="box clinical-box">
+                        <h4 class="subsection-title">Clinical Examples</h4>
+                        <ul>
+                            <li><strong>Rifampicin</strong> <span class="arrow">→</span> OCP failure</li>
+                            <li><strong>Phenobarbitone</strong> <span class="arrow">→</span> Neonatal jaundice</li>
+                            <li><strong>Antiepileptics</strong> <span class="arrow">→</span> Osteomalacia</li>
+                            <li><strong>Smoking/alcohol</strong> <span class="arrow">→</span> Drug failure</li>
+                            <li><strong>Autoinduction</strong> <span class="arrow">→</span> Carbamazepine <span class="arrow">→</span> Tolerance</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h3 class="section-title">🧪 Prodrug</h3>
+                    
+                    <div class="box definition-box">
+                        <strong>Definition:</strong> Inactive drug converted to active form in body.
+                    </div>
+                    
+                    <table>
+                        <tr>
+                            <th>Prodrug</th>
+                            <th>Active Form</th>
+                            <th>Use</th>
+                        </tr>
+                        <tr>
+                            <td>Enalapril</td>
+                            <td>Enalaprilat</td>
+                            <td>Hypertension</td>
+                        </tr>
+                        <tr>
+                            <td>Levodopa</td>
+                            <td>Dopamine</td>
+                            <td>Parkinson's</td>
+                        </tr>
+                        <tr>
+                            <td>Valacyclovir</td>
+                            <td>Acyclovir</td>
+                            <td>Herpes</td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <div class="section">
+                    <h3 class="section-title">⚙️ Kinetics of Elimination</h3>
+                    
+                    <table>
+                        <tr>
+                            <th>First Order</th>
+                            <th>Zero Order</th>
+                        </tr>
+                        <tr>
+                            <td>Constant fraction eliminated</td>
+                            <td>Constant amount eliminated</td>
+                        </tr>
+                        <tr>
+                            <td>t½ constant</td>
+                            <td>t½ increases</td>
+                        </tr>
+                        <tr>
+                            <td>Most drugs</td>
+                            <td>Ethanol, Phenytoin</td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <div class="section">
+                    <h3 class="section-title">🧯 Hoffmann Elimination</h3>
+                    
+                    <div class="box info-box">
+                        <p>Drug degraded in plasma (pH & temperature dependent)</p>
+                        <p><strong>Examples:</strong> Atracurium, Cis-atracurium</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chapter 3: Pharmacodynamics -->
+            <div class="chapter">
+                <h2 class="chapter-title">🧠 Pharmacodynamics</h2>
+                
+                <div class="section">
+                    <h3 class="section-title">🔗 G-Protein Coupled Receptors (GPCR)</h3>
+                    
+                    <div class="box info-box">
+                        <ul>
+                            <li>Largest receptor family</li>
+                            <li>Linked via G-protein</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="box clinical-box">
+                        <h4 class="subsection-title">Mechanism</h4>
+                        <ul>
+                            <li>α, β, γ subunits</li>
+                            <li>GDP <span class="arrow">→</span> GTP exchange</li>
+                            <li>α subunit activates or inhibits effector</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h3 class="section-title">⚖️ Physiological Antagonism</h3>
+                    
+                    <div class="box example-box">
+                        <ul>
+                            <li>Insulin ↔ Glucagon</li>
+                            <li>Adrenaline ↔ Histamine</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h3 class="section-title">🚫 Drug Antagonism</h3>
+                    
+                    <div class="box advantage-box">
+                        <h4 class="subsection-title">Competitive</h4>
+                        <ul>
+                            <li>Reversible</li>
+                            <li>Same receptor</li>
+                            <li>Rightward parallel shift</li>
+                            <li><strong>Example:</strong> Naloxone vs Morphine</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="box disadvantage-box">
+                        <h4 class="subsection-title">Non-Competitive</h4>
+                        <ul>
+                            <li>Irreversible</li>
+                            <li>Different site</li>
+                            <li>Flattened curve</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h3 class="section-title">🧪 Chemical Antagonism</h3>
+                    
+                    <div class="box definition-box">
+                        <p><strong>Definition:</strong> Chemical neutralization</p>
+                    </div>
+                    
+                    <div class="box example-box">
+                        <h4 class="subsection-title">Examples</h4>
+                        <ul>
+                            <li>Antacids + HCl</li>
+                            <li>Deferoxamine + Iron</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h3 class="section-title">🔬 Receptors & Transduction</h3>
+                    
+                    <div class="box info-box">
+                        <ul>
+                            <li><strong>GPCR</strong></li>
+                            <li><strong>Ion channels</strong> <span class="arrow">→</span> Nicotinic, GABA-A</li>
+                            <li><strong>Enzyme-linked</strong> <span class="arrow">→</span> EGFR</li>
+                            <li><strong>JAK-STAT</strong> <span class="arrow">→</span> Cytokines</li>
+                            <li><strong>Nuclear receptors</strong> <span class="arrow">→</span> Steroids</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chapter 4: Pharmacotherapy & ADRs -->
+            <div class="chapter">
+                <h2 class="chapter-title">💊 Pharmacotherapy & ADRs</h2>
+                
+                <div class="section">
+                    <h3 class="section-title">⚡ Tachyphylaxis</h3>
+                    
+                    <div class="box definition-box">
+                        <p><strong>Definition:</strong> Rapid tolerance</p>
+                    </div>
+                    
+                    <div class="box example-box">
+                        <p><strong>Examples:</strong> Ephedrine, Nicotine</p>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h3 class="section-title">🎯 Therapeutic Window</h3>
+                    
+                    <div class="box info-box">
+                        <p>Narrow safety margin</p>
+                        <p><strong>Examples:</strong> Digoxin, Digitoxin</p>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h3 class="section-title">👶 Young's Formula</h3>
+                    
+                    <div class="formula">
+                        Child dose = (Age / Age + 12) × Adult dose
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h3 class="section-title">🧬 Idiosyncrasy</h3>
+                    
+                    <div class="box definition-box">
+                        <p>Abnormal drug response — Genetically determined</p>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h3 class="section-title">🔍 Pharmacovigilance</h3>
+                    
+                    <div class="box clinical-box">
+                        <p><strong>WHO:</strong> Detection, assessment, understanding & prevention of ADRs.</p>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h3 class="section-title">🧬 Pharmacogenetics vs Pharmacogenomics</h3>
+                    
+                    <table>
+                        <tr>
+                            <th>Pharmacogenetics</th>
+                            <th>Pharmacogenomics</th>
+                        </tr>
+                        <tr>
+                            <td>Single gene</td>
+                            <td>Whole genome</td>
+                        </tr>
+                        <tr>
+                            <td>Individual drug</td>
+                            <td>Multiple drugs</td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <div class="section">
+                    <h3 class="section-title">🤰 Teratogenicity</h3>
+                    
+                    <table>
+                        <tr>
+                            <th>Drug</th>
+                            <th>Effect</th>
+                        </tr>
+                        <tr>
+                            <td>Thalidomide</td>
+                            <td>Phocomelia</td>
+                        </tr>
+                        <tr>
+                            <td>Carbamazepine</td>
+                            <td>Neural tube defects</td>
+                        </tr>
+                        <tr>
+                            <td>Valproate</td>
+                            <td>Spina bifida</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <h2>✨ Best Wishes for Your MBBS Finals! ✨</h2>
+            <p style="margin-top: 20px; font-size: 0.9em; opacity: 0.9;">
+                "Success is the sum of small efforts repeated day in and day out."
+            </p>
+        </div>
+    </div>
+</body>
+</html>

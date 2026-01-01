@@ -7,6 +7,14 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap');
         
+        :root {
+            --ivory: #FAFAF7;
+            --charcoal: #1F2937;
+            --sage: #8FAF9F;
+            --taupe: #9CA3AF;
+            --sand: #E7D8B1;
+        }
+        
         * {
             margin: 0;
             padding: 0;
@@ -16,23 +24,23 @@
         body {
             font-family: 'Inter', sans-serif;
             line-height: 1.8;
-            color: #2c3e50;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: var(--charcoal);
+            background: linear-gradient(135deg, var(--sage) 0%, var(--taupe) 100%);
             padding: 20px;
         }
         
         .container {
             max-width: 900px;
             margin: 0 auto;
-            background: white;
+            background: var(--ivory);
             border-radius: 20px;
             box-shadow: 0 20px 60px rgba(0,0,0,0.3);
             overflow: hidden;
         }
         
         .cover {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
+            background: linear-gradient(135deg, var(--sage) 0%, var(--charcoal) 100%);
+            color: var(--ivory);
             padding: 80px 40px;
             text-align: center;
         }
@@ -41,7 +49,7 @@
             font-family: 'Playfair Display', serif;
             font-size: 3.5em;
             margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
         
         .cover .subtitle {
@@ -59,15 +67,17 @@
         }
         
         .tag {
-            background: rgba(255,255,255,0.2);
+            background: rgba(250, 250, 247, 0.2);
             padding: 10px 20px;
             border-radius: 25px;
             font-size: 0.9em;
             backdrop-filter: blur(10px);
+            border: 1px solid rgba(250, 250, 247, 0.3);
         }
         
         .content {
             padding: 60px 50px;
+            background: var(--ivory);
         }
         
         .chapter {
@@ -78,10 +88,10 @@
         .chapter-title {
             font-family: 'Playfair Display', serif;
             font-size: 2.5em;
-            color: #667eea;
+            color: var(--sage);
             margin-bottom: 30px;
             padding-bottom: 15px;
-            border-bottom: 4px solid #667eea;
+            border-bottom: 4px solid var(--sage);
         }
         
         .section {
@@ -90,16 +100,17 @@
         
         .section-title {
             font-size: 1.8em;
-            color: #764ba2;
+            color: var(--charcoal);
             margin-bottom: 20px;
             display: flex;
             align-items: center;
             gap: 10px;
+            font-weight: 600;
         }
         
         .subsection-title {
             font-size: 1.3em;
-            color: #e74c3c;
+            color: var(--charcoal);
             margin: 20px 0 15px 0;
             font-weight: 600;
         }
@@ -108,37 +119,37 @@
             padding: 25px;
             border-radius: 15px;
             margin: 20px 0;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 15px rgba(31, 41, 55, 0.1);
         }
         
         .advantage-box {
-            background: linear-gradient(135deg, #d4fc79 0%, #96e6a1 100%);
-            border-left: 5px solid #27ae60;
+            background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+            border-left: 5px solid var(--sage);
         }
         
         .disadvantage-box {
-            background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
-            border-left: 5px solid #e17055;
+            background: linear-gradient(135deg, var(--sand) 0%, #f5e6c8 100%);
+            border-left: 5px solid #d4a574;
         }
         
         .definition-box {
-            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
-            border-left: 5px solid #00b894;
+            background: linear-gradient(135deg, #e8f4f0 0%, #d5ebe4 100%);
+            border-left: 5px solid var(--sage);
         }
         
         .example-box {
-            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
-            border-left: 5px solid #ff7675;
+            background: linear-gradient(135deg, var(--sand) 0%, #f0e4c8 100%);
+            border-left: 5px solid var(--taupe);
         }
         
         .clinical-box {
-            background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
-            border-left: 5px solid #6c5ce7;
+            background: linear-gradient(135deg, #e8ebe8 0%, #d9ddd9 100%);
+            border-left: 5px solid var(--taupe);
         }
         
         .info-box {
-            background: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%);
-            border-left: 5px solid #a29bfe;
+            background: linear-gradient(135deg, #f0f4f0 0%, #e3e9e3 100%);
+            border-left: 5px solid var(--sage);
         }
         
         ul {
@@ -150,13 +161,14 @@
             padding: 8px 0;
             padding-left: 30px;
             position: relative;
+            color: var(--charcoal);
         }
         
         ul li:before {
             content: "\25B8";
             position: absolute;
             left: 10px;
-            color: #667eea;
+            color: var(--sage);
             font-weight: bold;
         }
         
@@ -164,14 +176,14 @@
             width: 100%;
             border-collapse: collapse;
             margin: 20px 0;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 15px rgba(31, 41, 55, 0.1);
             border-radius: 10px;
             overflow: hidden;
         }
         
         th {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
+            background: linear-gradient(135deg, var(--sage) 0%, var(--charcoal) 100%);
+            color: var(--ivory);
             padding: 15px;
             text-align: left;
             font-weight: 600;
@@ -179,54 +191,66 @@
         
         td {
             padding: 15px;
-            border-bottom: 1px solid #ecf0f1;
+            border-bottom: 1px solid var(--taupe);
+            color: var(--charcoal);
         }
         
         tr:nth-child(even) {
-            background: #f8f9fa;
+            background: #f5f5f2;
+        }
+        
+        tr:nth-child(odd) {
+            background: var(--ivory);
         }
         
         .formula {
-            background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+            background: linear-gradient(135deg, var(--sand) 0%, #f0e4c8 100%);
             padding: 25px;
             border-radius: 15px;
             text-align: center;
             font-size: 1.3em;
             font-weight: 600;
             margin: 20px 0;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 15px rgba(31, 41, 55, 0.1);
+            color: var(--charcoal);
+            border: 2px solid var(--taupe);
         }
         
         .mnemonic {
-            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            background: linear-gradient(135deg, #e8f4f0 0%, #d5ebe4 100%);
             padding: 20px;
             border-radius: 15px;
             font-style: italic;
             margin: 15px 0;
-            border-left: 5px solid #00b894;
+            border-left: 5px solid var(--sage);
+            color: var(--charcoal);
         }
         
         .arrow {
-            color: #667eea;
+            color: var(--sage);
             font-weight: bold;
         }
         
         strong {
-            color: #2d3436;
+            color: var(--charcoal);
             font-weight: 600;
         }
         
         .footer {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
+            background: linear-gradient(135deg, var(--sage) 0%, var(--charcoal) 100%);
+            color: var(--ivory);
             padding: 40px;
             text-align: center;
             font-size: 1.2em;
         }
         
+        p {
+            color: var(--charcoal);
+        }
+        
         @media print {
             body {
-                background: white;
+                background: var(--ivory);
                 padding: 0;
             }
             .container {
